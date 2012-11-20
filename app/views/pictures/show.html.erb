@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Picture name:</b>
+  <%= @picture.picture_name %>
+</p>
+
+<p>
+  <b>Price:</b>
+  <%= @picture.price %>
+</p>
+
+<p>
+  <b>Description:</b>
+  <%= @picture.description %>
+</p>
+<div>
+  <% if @picture.image.present? %>
+    <%= image_tag @picture.image, :width=> '250', :height => '250' %>
+  <% end %>
+</div>
+
+<%= link_to 'Edit', edit_picture_path(@picture) %> |
+<%= link_to 'Back', pictures_path %>

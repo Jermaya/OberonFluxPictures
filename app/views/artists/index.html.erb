@@ -1,0 +1,31 @@
+<h1>Dash</h1>
+<%= link_to "Picture", pictures_path(@picture) %>
+<%= link_to "Categories", categories_path(@category) %>
+<%= link_to "Artists", artists_path(@artist) %>
+<h1>Listing artists</h1>
+
+<table>
+  <tr>
+    <th>First name</th>
+    <th>Last name</th>
+    <th>About</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @artists.each do |artist| %>
+  <tr>
+    <td><%= artist.first_name %></td>
+    <td><%= artist.last_name %></td>
+    <td><%= artist.about %></td>
+    <td><%= link_to 'Show', artist %></td>
+    <td><%= link_to 'Edit', edit_artist_path(artist) %></td>
+    <td><%= link_to 'Destroy', artist, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Artist', new_artist_path %>

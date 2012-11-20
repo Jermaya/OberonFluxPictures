@@ -1,0 +1,15 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Quantity:</b>
+  <%= @order_picture.quantity %>
+</p>
+
+<p>
+  <b>Price:</b>
+  <%= @order_picture.price %>
+</p>
+
+
+<%= link_to 'Edit', edit_order_picture_path(@order_picture) %> |
+<%= link_to 'Back', order_pictures_path %>
